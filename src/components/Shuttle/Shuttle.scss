@@ -31,9 +31,12 @@
   .shuttle--slider {
     @extend .shuttle--line;
 
+    transition-property: all;
+    transition-duration: 0.7s;
+
     width: 0;
 
-    border-bottom: 1px solid $nav-color-active;
+    border-bottom: 2px solid $nav-color-active;
   }
 
 }
