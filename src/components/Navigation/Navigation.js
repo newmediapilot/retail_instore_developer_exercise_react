@@ -41,7 +41,7 @@ class Navigation extends React.Component {
                     className={`nav-item ${item.active ? 'nav-item--active' : ''}`}
                     key={index}>
                     <a className="nav-item--link" href={item.route}>
-                        <span data-animation-target className="nav-item--text">{item.label}</span>
+                        <span className="nav-item--text">{item.label}</span>
                     </a>
                 </li>
             );
