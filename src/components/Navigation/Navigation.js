@@ -5,12 +5,19 @@ import Shuttle from "../Shuttle/Shuttle";
 
 // todo: extract item component into own class
 // todo: extract list component into own class
+// todo: create time fetch service
+// todo: crete time display component
 
 class Navigation extends React.Component {
 
     state = {
         items: [...NavigationModel.items]
     };
+
+    /**
+     * passed into child on click
+     */
+    clickTarget;
 
     /**
      * click handler
@@ -21,6 +28,7 @@ class Navigation extends React.Component {
             return model;
         });
         this.setState({items: mapped});
+        this.clickTarget = evt.target;
     }
 
     /**
@@ -29,11 +37,11 @@ class Navigation extends React.Component {
     items() {
         return this.state.items.map((item, index) => {
             return (
-                <li onClick={(evt) => this.click(item, evt)}
+                <li onClick={(e) => this.click(item, e)}
                     className={`nav-item ${item.active ? 'nav-item--active' : ''}`}
                     key={index}>
                     <a className="nav-item--link" href={item.route}>
-                        <span className="nav-item--text">{item.label}</span>
+                        <span data-animation-target className="nav-item--text">{item.label}</span>
                     </a>
                 </li>
             );
@@ -49,7 +57,7 @@ class Navigation extends React.Component {
                 <ul className="nav-list">
                     {this.items()}
                 </ul>
-                <Shuttle/>
+                <Shuttle target={this.clickTarget}/>
             </nav>
         );
     }
