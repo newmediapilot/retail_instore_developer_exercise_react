@@ -1,11 +1,13 @@
 const NavigationModel = [
     {
-        displayValue: 'tab1',
-        active: false
+        label: 'tab1',
+        active: false,
+        route:'#tab1'
     },
     {
-        displayValue: 'tab2',
-        active: false
+        label: 'tab2',
+        active: false,
+        route:'#tab2'
     }
 ];
 
