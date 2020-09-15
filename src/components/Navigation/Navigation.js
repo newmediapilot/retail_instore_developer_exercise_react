@@ -8,24 +8,28 @@ import Shuttle from "../Shuttle/Shuttle";
 
 class Navigation extends React.Component {
 
-    model = NavigationModel;
+    state = {
+        items: [...NavigationModel.items]
+    };
 
     /**
      * click handler
      */
-    click(item) {
-        this.model.forEach((modelItem) => {
-            modelItem.active = item === modelItem;
+    click(item, evt) {
+        let mapped = this.state.items.map((model) => {
+            model.active = (item.route === model.route);
+            return model;
         });
+        this.setState({items: mapped});
     }
 
     /**
      * list iterator
      */
     items() {
-        return this.model.map((item, index) => {
+        return this.state.items.map((item, index) => {
             return (
-                <li onClick={() => this.click(item)}
+                <li onClick={(evt) => this.click(item, evt)}
                     className={`nav-item ${item.active ? 'nav-item--active' : ''}`}
                     key={index}>
                     <a className="nav-item--link" href={item.route}>
