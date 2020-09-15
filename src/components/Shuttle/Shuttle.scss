@@ -1,3 +1,5 @@
+@import "../../styles/colors";
+
 .shuttle-container {
   pointer-events: none;
   position: absolute;
@@ -7,9 +9,11 @@
 
   .shuttle--rail {
     position: relative;
+    border-bottom: 1px solid $nav-color-inactive;
   }
 
   .shuttle-slider {
     position: absolute;
+    border-bottom: 1px solid $nav-color-active;
   }
 }
