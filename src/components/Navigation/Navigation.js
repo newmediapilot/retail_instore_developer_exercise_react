@@ -1,6 +1,7 @@
 import React from 'react';
 import './Navigation.scss';
 import NavigationModel from "../../models/NavigationModel";
+import Shuttle from "../Shuttle/Shuttle";
 
 // todo: extract item component into own class
 // todo: extract list component into own class
@@ -14,7 +15,6 @@ class Navigation extends React.Component {
      */
     click(item) {
         this.model.forEach((modelItem) => {
-            console.log('item === modelItem', item === modelItem);
             modelItem.active = item === modelItem;
         });
     }
@@ -39,21 +39,15 @@ class Navigation extends React.Component {
     /**
      * container
      */
-    list() {
+    render() {
         return (
             <nav className='nav-container'>
                 <ul className="nav-list">
                     {this.items()}
                 </ul>
+                <Shuttle/>
             </nav>
         );
-    }
-
-    /**
-     * output
-     */
-    render() {
-        return this.list();
     }
 }
 

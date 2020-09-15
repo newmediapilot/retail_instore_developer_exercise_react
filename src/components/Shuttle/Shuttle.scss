@@ -1,0 +1,15 @@
+.shuttle-container {
+  pointer-events: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+
+  .shuttle--rail {
+    position: relative;
+  }
+
+  .shuttle-slider {
+    position: absolute;
+  }
+}
