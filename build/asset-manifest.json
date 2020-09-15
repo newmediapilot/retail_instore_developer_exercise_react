@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/retail_instore_developer_exercise_react/build/static/css/main.5c193a04.chunk.css",
+    "main.js": "/retail_instore_developer_exercise_react/build/static/js/main.836c15b7.chunk.js",
+    "main.js.map": "/retail_instore_developer_exercise_react/build/static/js/main.836c15b7.chunk.js.map",
+    "runtime-main.js": "/retail_instore_developer_exercise_react/build/static/js/runtime-main.e9cc2788.js",
+    "runtime-main.js.map": "/retail_instore_developer_exercise_react/build/static/js/runtime-main.e9cc2788.js.map",
+    "static/js/2.b0c9d9be.chunk.js": "/retail_instore_developer_exercise_react/build/static/js/2.b0c9d9be.chunk.js",
+    "static/js/2.b0c9d9be.chunk.js.map": "/retail_instore_developer_exercise_react/build/static/js/2.b0c9d9be.chunk.js.map",
+    "index.html": "/retail_instore_developer_exercise_react/build/index.html",
+    "precache-manifest.2195def32af251067eeba9c652e535a3.js": "/retail_instore_developer_exercise_react/build/precache-manifest.2195def32af251067eeba9c652e535a3.js",
+    "service-worker.js": "/retail_instore_developer_exercise_react/build/service-worker.js",
+    "static/css/main.5c193a04.chunk.css.map": "/retail_instore_developer_exercise_react/build/static/css/main.5c193a04.chunk.css.map",
+    "static/js/2.b0c9d9be.chunk.js.LICENSE.txt": "/retail_instore_developer_exercise_react/build/static/js/2.b0c9d9be.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e9cc2788.js",
+    "static/js/2.b0c9d9be.chunk.js",
+    "static/css/main.5c193a04.chunk.css",
+    "static/js/main.836c15b7.chunk.js"
+  ]
+}
