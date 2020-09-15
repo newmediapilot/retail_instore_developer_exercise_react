@@ -1,0 +1,56 @@
+$nav-color-inactive: #929292;
+$nav-color-active: #050505;
+$nav-color-hover: #007aff;
+
+.nav-container {
+
+  width: 100%;
+  height: 120px;
+
+  .nav-list {
+    list-style: none;
+
+    display: flex;
+    width: 100%;
+    height: 100%;
+
+    padding: 0;
+    margin: 0;
+  }
+
+  .nav-item {
+    flex-grow: 1;
+    color: $nav-color-inactive;
+
+    &:hover {
+      color: $nav-color-hover;
+    }
+
+    &:active {
+      color: $nav-color-hover;
+    }
+
+    &.nav-item--active {
+      color: $nav-color-active;
+    }
+  }
+
+  .nav-item--link {
+    color: inherit;
+    text-decoration: none;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+  }
+
+  .nav-item--text {
+    color: inherit;
+
+    display: block;
+  }
+
+}
