@@ -1,21 +1,28 @@
 import React from 'react';
 import './Shuttle.scss';
 
+// todo: extract getLeftOffset into utility
+// todo: extract updateStyleProps into utility
+// todo: simplify render implementation (pure JS)
+
 class Shuttle extends React.Component {
 
     targetEl;
 
     componentDidMount() {
-        window.addEventListener('resize', ()=> { this.updateStyleProps() });
+        window.addEventListener('resize', () => {
+            this.updateStyleProps()
+        });
     }
 
     componentWillUnmount() {
-        window.removeEventListener('resize', ()=> { this.updateStyleProps() });
+        window.removeEventListener('resize', () => {
+            this.updateStyleProps()
+        });
     }
 
     state = {
         shuttleStyle: {
-            'transition': 'all 0.6s',
             left: 0,
             width: 0,
         }
@@ -27,15 +34,31 @@ class Shuttle extends React.Component {
         this.updateStyleProps();
     }
 
+    getRelativeOffset(el) {
+        let ul = this.targetEl.parentElement;
+        let previousEl = ul.previousElementSibling;
+        let offset = 0;
+        while (previousEl) {
+            offset += previousEl.getBoundingClientRect().width;
+            previousEl = previousEl.previousElementSibling;
+        }
+        return offset;
+    }
+
     updateStyleProps() {
         if (!this.targetEl) return;
 
-        let itemRect = this.targetEl.getBoundingClientRect();
-        let spanRect = this.targetEl.querySelector('span').getBoundingClientRect();
+        let offset = this.getRelativeOffset(this.targetEl);
+        let itemWidth = this.targetEl.getBoundingClientRect().width;
+        let textWidth = this.targetEl.querySelector('span').getBoundingClientRect().width;
+
+        console.log('offset', offset);
+        console.log('itemWidth', itemWidth);
+        console.log('textWidth', textWidth);
 
         let newStyle = Object.assign({}, this.state.shuttleStyle, {
-            left: itemRect.x + ((itemRect.width - spanRect.width) / 2),
-            width: spanRect.width
+            left: offset + ((itemWidth - textWidth) / 2),
+            width: textWidth
         });
 
         this.setState({shuttleStyle: newStyle});
